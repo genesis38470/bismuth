@@ -1,0 +1,85 @@
+April 17 2018:
+Added address validation
+
+April 20 2018:
+- Native Miner
+
+April 22 2018:
+- Fix Windows Submission issue.
+
+April 23 2018: v0.11
+- Enable status printout when fail.
+- Use Share CL Context
+
+April 24 2018: v0.12
+- Re-connect when submission fails.
+- Report miner hashrate to the pool.
+
+April 25 2018: v0.13
+- Support multiple cards on disable list (do_not_mine_on_gpu_number) by using "," as delimiter.
+  i.e: do_not_mine_on_gpu_number=0,1,2
+
+April 26 2018: v0.14
+- Add uptime / shares submitted stats
+- Error out when miner address in config file is incorrect
+
+April 28 2018: v0.15
+- Report Unique hash ID per miner based on machine its running on
+
+April 30 2018: v0.16
+- Exit when exception occurs and allow batch/script file to restart miner.
+
+April 30 2018: v0.17
+- Refactor hash rate calculation to match other miners
+
+May 6 2018: 0.17B (Beta)
+- Incremental improvement in Hashrate
+
+May 6 2018: 0.17C (Stable)
+- Remove FATAL/Warning message and unnesscary exit during diff checks
+
+May 6 2018: 0.18 Experimental
+- Major refactor of miner code (Will need detail testing)
+  work_size_factor is set per card and setting now greatly affect hash rate so tune carefully.
+
+May 20 2018: 0.18A
+- Fix issue with worksize factor crash.
+
+May 20 2018: 0.18B
+- Improve stability.
+
+June 4 2018: 0.18B1
+- Restore cpu damping functionality in 0.18 series
+
+June 6 2018: 0.18B2
+- Re-enable hash rate reporting from miner left out in 0.18B1
+
+June 9 2018: 0.18B3
+- Add command line parameter support
+- Add support for batch size adjustment
+
+June 11 2018: 0.18B4
+- Change default batch size to 16384
+
+June 13 2018: 0.18B5
+- Fix connection/reconnection issues in windows
+
+June 16 2018: 0.17D
+- Fix connection/reconnection issues in windows
+
+June 30 2018: 0.18B6
+- Fix a bug that prevented AMD card from submitting shares.
+
+July 15 2018: 0.18B7
+- Change status print formatting.
+- Tweak mining algorithm.
+
+July 29 2018: 0.18B8
+- Minor nonce tweaks.
+
+Aug 4th 2018: 0.18C
+- Add checks to prevent duplicate nonce.
+- Minor hash rate improvement
+
+Jun 23rd 2019: 0.18D2
+- Minor algorithm tweaks.

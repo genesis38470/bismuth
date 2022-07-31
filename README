@@ -1,0 +1,71 @@
+GETTING STARTED:
+
+NOTE: The executable also takes command line arguments, to find out give the -h command to display options
+      Service is enabled on port 55551 for stats reporting for awesome miner.
+
+1. Update miner address to yours (Make sure not to use an exchange address)
+2. Update miner name that is unique to you
+
+3. Update parameters describe below:
+
+Parameters:
+
+work_size_factor:
+==========================
+
+This multiples the default work group size with the work_size_factor.
+This requires tuning to find optimal value for your GPU.
+We will work on getting a doc to help you identify the best values and
+implement a auto adjusting function in the future
+
+Example:
+work_size_factor=1,2,1
+
+This will use:
+setting of 1 for GPU0
+setting of 2 for GPU1
+setting of 1 for GPU2
+if there's a forth GPU it will default to the last value.
+
+Setting that seem ok for 1080/1070/1060 cards is:
+work_size_factor=1
+
+which will apply 1 to all the cards
+
+AMD Cards seem to like larger work sizes such as 5
+
+cpu_damping_factor
+==========================
+
+Default: 0.6
+
+This controls the amount of time to sleep between sending work and getting result.
+Its meant to work around the driver issue of pegging the CPU. A setting of 1.0
+means we will sleep roughly the amount of time to work.
+NOTE: Currently this is disabled in this verison
+
+do_not_mine_on_gpu_number
+==========================
+
+Default: -1
+
+A list of GPU to skip for mining.
+
+Example:
+do_not_mine_on_gpu_number=0,1
+
+This will skip GPU0 and GPU1 and don't mine on those.
+
+Support questions please join bismuth discord and post on #coinsaurus
+
+batch_size
+==========================
+Default is 16384. Valid values are: 64,128,256,512,1024,2048,4096,8192,16384
+Batch size along with work_size_factor affect how long each kernel executes and together affect hashrate.
+
+NVIDIA cards under linux with batch size 64 yields the highest hash rate but not true for Windows.
+
+Junction File
+=========================
+Junction file required for new bismuth mining algorithm.
+This specifics the file path for the file. i.e [/tmp/heavy3a.bin]
